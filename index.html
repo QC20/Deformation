@@ -6,14 +6,19 @@
     <title>Canvas Particle Animation</title>
     <style>
         body, html {
-            margin: 0px;
-            padding: 0px;
-            position: fixed;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+        canvas {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <canvas id="myCanvas"></canvas>
+    <canvas id="canvas"></canvas>
     <script src="src/javascript/sketch.js"></script>
 </body>
 </html>
