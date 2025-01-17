@@ -3,6 +3,10 @@ var canvas = document.createElement("canvas"),
 var w = (canvas.width = window.innerWidth),
   h = (canvas.height = window.innerHeight);
 
+var existingCanvas = document.getElementById("canvas");
+if (existingCanvas) {
+  existingCanvas.remove();
+}
 document.body.appendChild(canvas);
 
 class Particle {
@@ -23,11 +27,11 @@ class Particle {
     c.arc(this.midx, this.midy, Math.abs((this.dist / 2) - this.dif), this.dang - this.dd, this.dang + this.dd);
     c.strokeStyle = "rgba(255,255,255," + this.opacity + ")";
     c.lineWidth = 0.2;
-    c.stroke();  
+    c.stroke();
   }
 }
 
-var res = 20,
+var res = 25,
   count = Math.round(w * h / (res * res)),
   p = new Array(count),
   x = w / 2,
@@ -75,12 +79,12 @@ function draw() {
 
 var mouse = { x: false, y: false };
 
-canvas.addEventListener("mousemove", function(e) {
+canvas.addEventListener("mousemove", function (e) {
   mouse.x = e.pageX - this.offsetLeft;
   mouse.y = e.pageY - this.offsetTop;
 }, false);
 
-canvas.addEventListener("mouseleave", function(e) {
+canvas.addEventListener("mouseleave", function (e) {
   mouse.x = false;
   mouse.y = false;
 });
@@ -90,7 +94,7 @@ function loop() {
   draw();
 }
 
-window.addEventListener("resize", function() {
+window.addEventListener("resize", function () {
   w = canvas.width = window.innerWidth;
   h = canvas.height = window.innerHeight;
   count = Math.round(w * h / (res * res));
