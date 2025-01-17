@@ -1,6 +1,6 @@
 # Deformation
 
-![Deformation](assets/img/Deformation.png)
+![Deformation](src/assets/img/Deformation.png)
 
 ---
 
